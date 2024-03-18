@@ -1,79 +1,40 @@
 # Social Network API
 
-This is a social network API app built using Express.js, MongoDB, and Mongoose. It allows users to interact with each other by creating thoughts, reacting to thoughts, and adding friends.
+This is a RESTful API for a social network application. It allows users to create, read, update, and delete thoughts and reactions.
 
-## Getting Started
+## Installation
 
-To get a local copy of the repository up and running, follow these simple steps.
-
-### Prerequisites
-
-- Node.js
-- MongoDB
-- Insomnia (for testing API routes)
+1. To install the application, follow these steps:
+2. Clone the repository to your local machine.
+3. Install the dependencies by running npm install.
+4. Create a .env file in the root directory and add your MongoDB connection string to it.
+5. Start the application by running npm start.
 
 
 ## Usage
+The application provides the following endpoints:
 
-### API Routes
+- GET /api/users: Retrieves all users.
+- GET /api/users/:id: Retrieves a single user by ID.
+- POST /api/users: Creates a new user.
+- PUT /api/users/:id: Updates a user by ID.
+- DELETE /api/users/:id: Deletes a user by ID.
+- POST /api/users/:userId/friends/:friendId: Adds a friend to a user's friend list.
+- DELETE /api/users/:userId/friends/:friendId: Removes a friend from a user's friend list.
+- GET /api/thoughts: Retrieves all thoughts.
+- GET /api/thoughts/:id: Retrieves a single thought by ID.
+- POST /api/thoughts: Creates a new thought.
+- PUT /api/thoughts/:id: Updates a thought by ID.
+- DELETE /api/thoughts/:id: Deletes a thought by ID.
+- POST /api/thoughts/:thoughtId/reactions: Adds a reaction to a thought.
+- DELETE /api/thoughts/:thoughtId/reactions/:reactionId: Removes a reaction from a thought.
 
-The API has the following routes:
+## Screenshot
 
-- GET /api/users
-- GET /api/users/:id
-- POST /api/users
-- PUT /api/users/:id
-- DELETE /api/users/:id
+![Screenshot of my website](/SocialNetworkScreenshot.png)
 
-- GET /api/thoughts
-- GET /api/thoughts/:id
-- POST /api/thoughts
-- PUT /api/thoughts/:id
-- DELETE /api/thoughts/:id
+## Demonstration
 
-- POST /api/users/:userId/friends/:friendId
-- DELETE /api/users/:userId/friends/:friendId
+[Check out my demo!](https://www.loom.com/share/a8650b7b05454e7b99b2aeece0224837/)
 
-- POST /api/thoughts/:thoughtId/reactions
-- DELETE /api/thoughts/:thoughtId/reactions/:reactionId
-
-### Testing API Routes
-
-To test the API routes, you can use Insomnia. Here are some example requests:
-
-1. GET /api/users
-- This will return all users in the database.
-
-2. GET /api/users/:id
-- Replace :id with the user's ID. This will return the user with the specified ID.
-
-3. POST /api/users
-- This will create a new user. The request body should include the user's username, email, and password.
-
-4. PUT /api/users/:id
-- Replace :id with the user's ID. This will update the user with the specified ID. The request body should include the updated user information.
-
-5. DELETE /api/users/:id
-- Replace :id with the user's ID. This will delete the user with the specified ID.
-
-6. POST /api/thoughts
-- This will create a new thought. The request body should include the thought's content and the user's ID.
-
-7. PUT /api/thoughts/:id
-- Replace :id with the thought's ID. This will update the thought with the specified ID. The request body should include the updated thought information.
-
-8. DELETE /api/thoughts/:id
-- Replace :id with the thought's ID. This will delete the thought with the specified ID.
-
-9. POST /api/users/:userId/friends/:friendId
-- Replace :userId with the user's ID and :friendId with the friend's ID. This will add the specified friend to the user's friend list.
-
-10. DELETE /api/users/:userId/friends/:friendId
- - Replace :userId with the user's ID and :friendId with the friend's ID. This will remove the specified friend from the user's friend list.
-
-11. POST /api/thoughts/:thoughtId/reactions
- - Replace :thoughtId with the thought's ID. This will create a new reaction for the specified thought. The request body should include the reaction's content and the user's ID.
-
-12. DELETE /api/thoughts/:thoughtId/reactions/:reactionId
- - Replace :thoughtId with the thought's ID and :reactionId with the reaction's ID. This will delete the reaction with the specified ID from the thought.
 
